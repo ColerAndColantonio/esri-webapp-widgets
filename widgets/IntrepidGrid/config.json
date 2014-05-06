@@ -1,0 +1,14 @@
+{
+    "intrepidGrid": {
+        "dateFormat": "DateFormat(selector: 'date', fullYear: true)",
+        "mode": "show_all",
+        "timeInterval": "esriTimeUnitsYears",
+        "layers": [
+            {
+                "url": "http://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/U2/FeatureServer/0"
+            }
+        ]
+    },
+    "intrepidUrl": "http://10.1.7.165:8080/",
+    "intrepidUrl1": "http://192.168.1.11:8080/"
+}

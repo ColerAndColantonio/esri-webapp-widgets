@@ -1,0 +1,14 @@
+{
+    "name": "IntrepidGrid",
+    "2D": true,
+    "3D": false,
+    "platform": "HTML",
+    "version": "0.0.1",
+    "author": "Coler And Colantonio",
+    "description": "PODS integration",
+    "copyright": "2014",
+    "properties": {
+        "inPanel": false,
+        "hasUIFile": true
+    }
+}

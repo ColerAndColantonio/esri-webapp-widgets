@@ -1,0 +1,275 @@
+{
+  "theme": {
+    "name": "FoldableTheme"
+  },
+  "portalUrl": "http://www.arcgis.com",
+  "appId":"crhIGF7lkhiqvKyT",
+  "title": "ArcGIS Web Application",
+  "subtitle": "with ArcGIS WebApp Builder",
+  "splashPage": "widgets/Splash/Widget",
+  "about": "widgets/About/Widget",
+  "httpProxy": "/proxy.js",
+  
+  "geometryService": {
+    "url": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
+  },
+  
+  "links":[
+    {
+      "label": "ArcGIS Online",
+      "url": "//www.arcgis.com"
+    }
+  ],
+
+  "preloadWidgets": {
+    "panel": {
+      "uri": "themes/FoldableTheme/panels/TitlePanel/Panel"
+    },
+    "widgets": [{
+        "label": "HeaderController",
+        "uri": "widgets/HeaderController/Widget",
+        "positionRelativeTo": "browser",
+        "position": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "height": 40
+        }
+      },{
+        "label": "Scalebar",
+        "uri": "widgets/Scalebar/Widget",
+        "position": {
+          "left": 25,
+          "bottom": 25
+        }
+      },{
+        "label": "Geocoder",
+        "uri": "widgets/Geocoder/Widget",
+        "position": {
+          "left": 45,
+          "top": 5
+        }
+      },{
+        "label": "Select a basemap",
+        "uri": "widgets/BasemapGallery/Widget",
+        "position": {
+          "left": 45,
+          "top": 45,
+          "width": 360,
+          "height": 410
+        }
+      },{
+        "label": "Measure",
+        "uri": "widgets/Measurement/Widget",
+        "position": {
+          "left": 95,
+          "top": 45,
+          "height": 200
+        }
+      }, {
+        "label": "Query",
+        "uri": "widgets/Query/Widget",
+        "position": {
+          "left": 145,
+          "top": 45,
+          "width": 380,
+          "height": 410
+        }
+      },{
+        "label": "Coordinate",
+        "uri": "widgets/Coordinate/Widget",
+        "position": {
+          "left": 200,
+          "bottom": 10
+        }
+      },{
+        "label": "Overview",
+        "uri": "widgets/OverviewMap/Widget",
+        "position": {
+          "right": 0,
+          "bottom": 0
+        }
+      },{
+        "label": "HomeButton",
+        "uri": "widgets/HomeButton/Widget",
+        "position": {
+          "left": 7,
+          "top": 75
+        }
+      }, {
+        "uri": "widgets/MyLocation/Widget",
+        "position": {
+          "left": 7,
+          "top": 110
+        }
+      }]
+  },
+
+  "map": {
+        "basemaps": [
+            {
+                "label": "Topographic",
+                "url": "http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer",
+                "type": "tiled"
+            }
+        ],
+        "operationallayers": [
+            {
+                "label": "Centerlines",
+                "url": "http://intrepid-5/ArcGIS/rest/services/SaskEnergy_DSS/MapServer/12",
+                "type": "feature"
+            }
+        ]
+    },
+  "widgetPool": {
+    "panel": {
+      "uri": "themes/FoldableTheme/panels/FoldablePanel/Panel",
+      "positionRelativeTo": "map",
+      "position": {
+        "top": 5,
+        "right": 5,
+        "bottom": 5
+      }
+    },
+
+    "groups": [{
+      "label": "AttributeTable",
+      "widgets": [{
+        "label": "AttributeTable",
+        "uri": "widgets/AttributeTable/Widget",
+      }],
+      "panel": {
+        "uri": "themes/FoldableTheme/panels/DockablePanel/Panel",
+        "positionRelativeTo": "map",
+        "position": {
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "height": 450
+        },
+        "options": {
+          "region": "bottom",
+          "resizeMap": false
+        }
+      }
+    },{
+      "label": "HistogramTimeSlider",
+      "widgets": [{
+        "label": "HistogramTimeSlider",
+        "uri": "widgets/HistogramTimeSlider/Widget",
+      }],
+      "panel": {
+        "uri": "themes/FoldableTheme/panels/DockablePanel/Panel",
+        "positionRelativeTo": "map",
+        "position": {
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "height": 220
+        },
+        "options": {
+          "region": "bottom",
+          "resizeMap": false
+        }
+      }
+    },
+
+
+ {"label": "IntrepidGrid",
+      "widgets": [{
+        "label": "IntrepidGrid",
+        "uri": "widgets/IntrepidGrid/Widget",
+      }],
+      "panel": {
+        "uri": "themes/FoldableTheme/panels/DockablePanelNoScrolling/Panel",
+        "positionRelativeTo": "map",
+        "position": {
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "height": 220
+        },
+        "options": {
+          "region": "bottom",
+          "resizeMap": false
+        }
+      }}
+
+    ,{
+      "label": "samples",
+      "widgets": [
+      {
+        "label": "AttributeTable",
+        "uri": "widgets/AttributeTable/Widget"
+      },{
+        "label": "Demo",
+        "uri": "widgets/samplewidgets/Demo/Widget"
+      },{
+        "label": "Simple",
+        "uri": "widgets/samplewidgets/Simple/Widget"
+      },{
+        "label": "Intrepid",
+        "uri": "widgets/Intrepid/Widget"
+      },{
+        "label": "IntrepidGrid",
+        "uri": "widgets/IntrepidGrid/Widget"
+      }, 
+
+
+      {"label": "HistogramTimeSlider2",
+      "widgets": [{
+        "label": "HistogramTimeSlider",
+        "uri": "widgets/HistogramTimeSlider/Widget",
+      }],
+      "panel": {
+        "uri": "themes/FoldableTheme/panels/DockablePanel/Panel",
+        "positionRelativeTo": "map",
+        "position": {
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "height": 220
+        },
+        "options": {
+          "region": "bottom",
+          "resizeMap": false
+        }
+      }}
+
+
+      ]
+    }],
+
+    "widgets": [{
+      "label": "Bookmark",
+      "uri": "widgets/Bookmark/Widget"
+    },{
+      "label": "Legend",
+      "uri": "widgets/Legend/Widget"
+    }, {
+      "label": "LayerList",
+      "uri": "widgets/LayerList/Widget"
+    },{
+      "label": "Search",
+      "uri": "widgets/Search/Widget"
+    }, {
+      "label": "Edit",
+      "uri": "widgets/Edit/Widget"
+    },{
+      "label": "Draw",
+      "uri": "widgets/Draw/Widget"
+    },{
+      "label": "Print",
+      "uri": "widgets/Print/Widget"
+    },{
+      "label": "Chart",
+      "uri": "widgets/Chart/Widget"
+    },{
+      "label": "Directions",
+      "uri": "widgets/Directions/Widget"
+    },{
+      "label": "Geoprocessing",
+      "uri": "widgets/Geoprocessing/Widget"
+    }]
+  }
+}

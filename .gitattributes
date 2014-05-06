@@ -1,0 +1,50 @@
+# https://help.github.com/articles/dealing-with-line-endings
+# Set default behaviour, in case users don't have core.autocrlf set.
+#* text=auto
+
+# This is a windows project; so just make all files have CRLF endings.
+* text eol=crlf
+
+# Explicitly declare text files we want to always be normalized and converted 
+# to native line endings on checkout.
+#*.c text
+#*.h text
+*.dgml text
+*.h text
+*.cpp text
+*.config text
+*.hxx text
+*.sql text
+*.cxx text
+*.ixx text
+*.txt text
+*.html text
+*.natvis text
+*.ps1 text
+*.autopkg text
+*.xml text
+*.props text
+*.targets text
+
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf
+*.vcxproj text eol=crlf
+*.vcxproj.filters text eol=crlf
+*.user text eol=crlf
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+*.dll binary
+*.nupkg binary
+*.bmp binary
+*.ico binary
+*.exe binary
+*.bin binary
+*.aps binary
+*.zip binary
+*.pdf binary
+*.suo binary
+*.sdf binary
+*.pdb binary
+*.ilk binary
