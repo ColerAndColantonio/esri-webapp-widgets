@@ -1,18 +1,3 @@
-///////////////////////////////////////////////////////////////////////////
-// Copyright (c) 2013 Esri. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//    http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-///////////////////////////////////////////////////////////////////////////
 define([
         'dijit/_WidgetsInTemplateMixin',
         'dojo/_base/declare',
@@ -130,13 +115,10 @@ define([
                     }
                 }
                 var sliderParams = this.config.intrepidGrid;
-                //this.timeSliderDiv.innerHTML = "";
-                //this.timeSlider = new IntrepidGrid(sliderParams, this.timeSliderDiv);
-                // this.map.setTimeSlider(this.timeSlider);
             },
 
             initDiv: function (url) {
-                console.log('initDiv url: ' + url);
+                //console.log('initDiv url: ' + url);
                 this.timeSliderDiv = domConstruct.create("div");
                 domAttr.set(this.timeSliderDiv, "id", "intrepidGridDiv");
                 domClass.add(this.timeSliderDiv, "intrepidGridSlider");
@@ -151,7 +133,7 @@ define([
                         var mySmd = {
                             "SMDVersion": "2.0",
                             "id": url + "pods/api/centerlineBasic/",
-                            "description": "This is the service to get to the tree backend data",
+                            "description": "This is the service to get the tree backend data",
 
                             transport: "JSONP",
                             envelope: "URL",
@@ -163,15 +145,11 @@ define([
 
                             services: {
                                 query: {
-                                    target: 'centerlineBasic' /*,
-                                     parameters: [
-                                     { name: "routeId", default: "-777", type: "string", optional: true }
-                                     ]*/
+                                    target: 'centerlineBasic'
                                 }
                             }
                         };
                         var svc = new RpcService(mySmd);
-                        //svc.query(options);
                         this.service = svc.query;
 
                         // this lets ServiceStore's getLabel(), fetchItemByIdentity(),
@@ -180,21 +158,12 @@ define([
                     },
 
                     fetch: function (request) {
-                        console.log('fetch request (1): ' + JSON.stringify(request));
+                        //console.log('fetch request (1): ' + JSON.stringify(request));
                         var routeIdForQuery = this.xxx || 0;
                         this.lastRoute = this.lastRoute || -333;
                         var rq = dojo.mixin({}, request.query);
                         rq.routeId = this.serviceRouteId;
-                        /*if (rq && (!rq.routeId)) {
-                         rq.routeId = 0;//this.lastRoute;
-                         console.log('not doing anything not sure why getting called with no route id');
-                         console.log('fetch request(2): ' + JSON.stringify(request));
-                         } else {
-                         if (!rq) {
-                         console.log('fetch rq is null');
-                         }
-                         }*/
-                        console.log('fetch request (3): ' + JSON.stringify(request));
+                        //console.log('fetch request (3): ' + JSON.stringify(request));
                         request.query = rq;
                         return this.inherited(arguments);
                     },
@@ -265,18 +234,11 @@ define([
             },
 
             onReceiveData: function (name, widgetId, data) {
-                console.log(name);
-                console.log(widgetId);
+                //console.log(name);
+                //console.log(widgetId);
                 if (name === "Intrepid") {
-                    console.log("received data!");
-                    //var store = grid.store;
+                    //console.log("received data!");
                     this.grid.store.setServiceRouteId(data);
-                    //store.fetch();
-                    //var newStore = new candc.data.CenterlineStore();
-                    //newStore.fetch({ query: { routeId: data } });
-                    //this.grid.setStore(newStore);
-                    //this.grid.store.fetch({ query: { routeId: data } });
-                    //this.xxx = data;
                     this.grid.render();
                 }
             }

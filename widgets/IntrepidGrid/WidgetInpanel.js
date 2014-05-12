@@ -39,14 +39,12 @@ define([
 
 
             postCreate: function () {
-                console.log('postCreate');
+                //console.log('postCreate');
                 this.inherited(arguments);
             },
 
             startup: function () {
                 this.inherited(arguments);
-
-                //utils.loadStyleLink("dgrid", apiUrl + "js/dgrid/css/dgrid.css");
 
                 dojo.declare('candc.data.CenterlineStore', dojox.data.ServiceStore, {
                     constructor: function (options) {
@@ -81,7 +79,7 @@ define([
                         this.idAttribute = this.labelAttribute = "routeId";
                     },
                     fetch: function (args) {
-                        console.log('fetch...');
+                        //console.log('fetch...');
                         args = args || {};
                         var rq = {routeId: '465'};
                         args.query = rq;
@@ -139,15 +137,13 @@ define([
                     store: new candc.data.CenterlineStore(),
                     autoHeight: 20
                 }, this.gridContainer);
-                //this.grid.placeAt(this.gridContainer);
                 this.grid.startup();
-                //this.grid.renderArray(data);
 
-                console.log('startup');
+                //console.log('startup');
             },
 
             onOpen: function () {
-                console.log('onOpen');
+                //console.log('onOpen');
                 this.inherited(arguments);
                 if (!this.dataGridDiv) {
                     this.initDiv();
@@ -155,23 +151,23 @@ define([
             },
 
             onClose: function () {
-                console.log('onClose');
+                //console.log('onClose');
             },
 
             onMinimize: function () {
-                console.log('onMinimize');
+                //console.log('onMinimize');
             },
 
             onMaximize: function () {
-                console.log('onMaximize');
+                //console.log('onMaximize');
             },
 
             onSignIn: function (credential) {
-                console.log('onSignIn');
+                //console.log('onSignIn');
             },
 
             onSignOut: function () {
-                console.log('onSignOut');
+                //console.log('onSignOut');
             },
 
             initDiv: function() {

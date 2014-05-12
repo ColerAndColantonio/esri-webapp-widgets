@@ -24,29 +24,18 @@ define([
         // https://www.ibm.com/developerworks/library/wa-lazyload/
         // http://stackoverflow.com/questions/10829972/dojo-jsonrest-store-and-dijit-tree
 
-        //To create a widget, you need to derive from BaseWidget.
-
-
         var clazz = declare([BaseWidget], {
-            // DemoWidget code goes here
-
-            //please note that this property is be set by the framework when widget is loaded.
-            //templateString: template,
-
             baseClass: 'jimu-widget-intrepidHierarchy',
 
             name: 'IntrepidHierarchy',
 
             postCreate: function () {
-                console.log('postCreate');
+                //console.log('postCreate');
                 this.inherited(arguments);
             },
 
             startup: function () {
                 this.inherited(arguments);
-
-                /*this.mapIdNode.innerHTML = 'map id:' + this.map.id;
-                this.contentNode.innerHTML = dojo.version;*/
 
                 dojo.declare('my.ForestStoreModel', dijit.tree.ForestStoreModel, {
                     onSetItem: function (item, attribute, oldValue, newValue) {
@@ -81,35 +70,35 @@ define([
                 this.tree.placeAt(this.treeContainer);
                 this.tree.startup();
 
-                console.log('startup');
+                //console.log('startup');
             },
 
             onOpen: function () {
-                console.log('onOpen');
+                //console.log('onOpen');
             },
 
             onClose: function () {
-                console.log('onClose');
+                //console.log('onClose');
             },
 
             onMinimize: function () {
-                console.log('onMinimize');
+                //console.log('onMinimize');
             },
 
             onMaximize: function () {
-                console.log('onMaximize');
+                //console.log('onMaximize');
             },
 
             onSignIn: function (credential) {
-                console.log('onSignIn');
+                //console.log('onSignIn');
             },
 
             onSignOut: function () {
-                console.log('onSignOut');
+                //console.log('onSignOut');
             },
 
             _init: function (url) {
-                console.log("Url: " + url);
+                //console.log("Url: " + url);
                 var mySmd = {
                     "SMDVersion": "2.0",
                     "id": url + "pods/api/test/",
@@ -118,7 +107,6 @@ define([
                     transport: "JSONP",
                     envelope: "URL",
                     additionalParameters: true,
-                    //target: "http://10.1.7.165:8080/",
                     target: url,
 
                     services: {
@@ -138,19 +126,6 @@ define([
                     idAttribute: "id",
                     labelAttribute: "name"
                 });
-
-                //create forestTreeModel; needed b/c we may have many items at 'top'
-                /*var treeModelParams = {
-                 store: myStore,
-                 deferItemLoadingUntilExpand: true,
-                 childrenAttrs: ["children"],
-                 query: '-1',
-                 onSetItem: function (item, attribute, oldValue, newValue) {
-                 console.log('onSetItem x');
-                 this._requeryTop();
-                 this.inherited(arguments);
-                 }
-                 };*/
             },
 
             onReceiveData: function (name, widgetId, data) {
